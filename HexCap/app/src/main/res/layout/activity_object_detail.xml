@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ObjectDetailActivity">
+
+    <ImageView
+        android:id="@+id/imageObject"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/borobudur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textObjectTitle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/imageObject"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="@string/TitleObject"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/textTrivia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textObjectTitle"
+        android:paddingHorizontal="50dp"
+        android:paddingTop="10dp"
+        android:textSize="20dp"
+        android:text="@string/trivia"
+        />
+    <TextView
+        android:id="@+id/textObjectDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTrivia"
+        android:paddingHorizontal="50dp"
+        android:paddingTop="10dp"
+        android:text="lorem ipsum dolor sit amet"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

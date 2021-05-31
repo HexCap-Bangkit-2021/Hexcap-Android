@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HexCap</string>
+    <string name="TitleObject">Nama Object</string>
+    <string name="trivia">TRIVIA</string>
+</resources>
