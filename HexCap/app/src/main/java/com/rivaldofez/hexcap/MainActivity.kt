@@ -3,6 +3,7 @@ package com.rivaldofez.hexcap
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -23,10 +24,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import com.rivaldofez.hexcap.ml.Recognition
-import com.rivaldofez.hexcap.ml.RecognitionAdapter
-import com.rivaldofez.hexcap.ml.RecognitionListViewModel
-import com.rivaldofez.hexcap.ml.TempleModel
+import com.rivaldofez.hexcap.ml.*
+import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
 import com.rivaldofez.hexcap.util.YuvToRgbConverter
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
@@ -45,7 +44,7 @@ typealias RecognitionListener = (recognition: List<Recognition>) -> Unit
 /**
  * Main entry point into TensorFlow Lite Classifier
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PredictionCallback {
 
     // CameraX variables
     private lateinit var preview: Preview // Preview use case, fast, responsive view of the camera
@@ -78,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Initialising the resultRecyclerView and its linked viewAdaptor
-        val viewAdapter = RecognitionAdapter(this)
+        val viewAdapter = RecognitionAdapter(this, this)
         resultRecyclerView.adapter = viewAdapter
 
         // Disable recycler view animation to reduce flickering, otherwise items can move, fade in
@@ -94,6 +93,12 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
+    }
+
+    override fun onRecognitionClick(recognition: Recognition) {
+        Toast.makeText(this, recognition.label, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetailTempleActivity::class.java)
+        startActivity(intent)
     }
 
     /**

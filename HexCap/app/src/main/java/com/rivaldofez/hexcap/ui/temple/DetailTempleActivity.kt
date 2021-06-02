@@ -1,5 +1,6 @@
 package com.rivaldofez.hexcap.ui.temple
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
 import androidx.core.widget.TextViewCompat
+import com.rivaldofez.hexcap.MainActivity
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
 
@@ -30,5 +32,10 @@ class DetailTempleActivity : AppCompatActivity() {
 
         tvTaglineItem.setPadding((4 * scale + 0.5F).toInt())
         detailTempleBinding.llTagline.addView(tvTaglineItem)
+
+        detailTempleBinding.btnExplore.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

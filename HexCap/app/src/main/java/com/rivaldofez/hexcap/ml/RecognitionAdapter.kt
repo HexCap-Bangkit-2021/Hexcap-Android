@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.rivaldofez.hexcap.databinding.RecognitionItemBinding
 
-class RecognitionAdapter(private val ctx: Context) :
-    ListAdapter<Recognition, RecognitionViewHolder>(RecognitionDiffUtil()) {
+class RecognitionAdapter(private val ctx: Context, private val callback: PredictionCallback) :
+    ListAdapter<Recognition, RecognitionAdapter.RecognitionViewHolder>(RecognitionDiffUtil()) {
 
     /**
      * Inflating the ViewHolder with recognition_item layout and data binding
@@ -35,16 +35,17 @@ class RecognitionAdapter(private val ctx: Context) :
         }
     }
 
+    inner class RecognitionViewHolder(private val binding: RecognitionItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-}
-
-class RecognitionViewHolder(private val binding: RecognitionItemBinding) :
-    RecyclerView.ViewHolder(binding.root) {
-
-    // Binding all the fields to the view - to see which UI element is bind to which field, check
-    // out layout/recognition_item.xml
-    fun bindTo(recognition: Recognition) {
-        binding.recognitionItem = recognition
-        binding.executePendingBindings()
+        // Binding all the fields to the view - to see which UI element is bind to which field, check
+        // out layout/recognition_item.xml
+        fun bindTo(recognition: Recognition) {
+            binding.recognitionItem = recognition
+            binding.executePendingBindings()
+            binding.llPred.setOnClickListener { callback.onRecognitionClick(recognition)}
+        }
     }
+
 }
+
