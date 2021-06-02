@@ -1,11 +1,12 @@
 package com.rivaldofez.hexcap.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivityGetStartedBinding
+import com.rivaldofez.hexcap.ui.home.HomeActivity
 
 class GetStartedActivity : AppCompatActivity(), GetStartedCallback {
     private lateinit var getStartedBinding: ActivityGetStartedBinding
@@ -31,5 +32,7 @@ class GetStartedActivity : AppCompatActivity(), GetStartedCallback {
 
     override fun onPlaceClick(place: Place) {
         Toast.makeText(this,place.name, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 }

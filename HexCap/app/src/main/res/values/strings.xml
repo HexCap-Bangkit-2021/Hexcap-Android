@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HexCap</string>
+    <string name="permission_deny_text">Required permissions denied. Exiting.</string>
 </resources>

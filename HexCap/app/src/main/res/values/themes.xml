@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.HexCap.Searchview">
+        <item name="android:textColorHint">@color/silver</item>
+        <item name="android:editTextColor">@color/black</item>
+        <item name="android:textSize">12dp</item>
+        <item name="iconTint">@color/gainsboro</item>
+    </style>
 </resources>
