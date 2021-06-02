@@ -53,24 +53,38 @@
             android:text="Candi Borobudur"
             android:maxLines="2"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tv_city"
+            app:layout_constraintBottom_toTopOf="@+id/ll_city"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_city"
+        <LinearLayout
+            android:id="@+id/ll_city"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:drawableStart="@drawable/ic_location"
-            android:text="Magelang"
-            android:textColor="@color/silver"
-            android:textSize="9sp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/img_temple"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:text="Magelang"
+                android:textColor="@color/silver"
+                android:textSize="9sp" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,5 +1,6 @@
 package com.rivaldofez.hexcap.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityHomeBinding
+import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
 
 class HomeActivity : AppCompatActivity(), TempleCallback {
     private lateinit var homeBinding: ActivityHomeBinding
@@ -35,6 +37,8 @@ class HomeActivity : AppCompatActivity(), TempleCallback {
     }
 
     override fun onTempleClick(temple: Temple) {
+        val intent = Intent(this, DetailTempleActivity::class.java)
+        startActivity(intent)
         Toast.makeText(this, temple.name, Toast.LENGTH_SHORT).show()
     }
 }
