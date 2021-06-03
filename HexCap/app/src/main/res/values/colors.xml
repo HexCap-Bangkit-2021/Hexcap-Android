@@ -15,4 +15,5 @@
     <color name="silver">#b7b7b7</color>
     <color name="gainsboro">#dedede</color>
     <color name="darkslategray">#282a2c</color>
+    <color name="darkslateblack">#1f2f2e</color>
 </resources>
