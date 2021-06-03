@@ -5,11 +5,14 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="greenslatedark">#153338</color>
+    <color name="greenslate">#2B6670</color>
+    <color name="blueteal">#005396</color>
+    <color name="crimson">#eb3223</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="smokewhite">#f7f7f7</color>
     <color name="silver">#b7b7b7</color>
     <color name="gainsboro">#dedede</color>
     <color name="darkslategray">#282a2c</color>
-    <color name="crimson">#eb3223</color>
 </resources>
