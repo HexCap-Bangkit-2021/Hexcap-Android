@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityHomeBinding
+import com.rivaldofez.hexcap.ui.article.ArticleActivity
 import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
 
 class HomeActivity : AppCompatActivity(), TempleCallback {
@@ -34,6 +35,13 @@ class HomeActivity : AppCompatActivity(), TempleCallback {
         adapter.setTemples(listTemple)
         homeBinding.rvTemple.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         homeBinding.rvTemple.adapter = adapter
+
+        homeBinding.btnTips.setOnClickListener {
+            val intent = Intent(this, ArticleActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Funfact", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun onTempleClick(temple: Temple) {

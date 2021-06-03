@@ -3,6 +3,8 @@ buildscript {
     ext{
         kotlin_version = "1.4.32"
         glideVersion = '4.11.0'
+        okhttp3_version = '4.9.0'
+        retrofit_version = '2.9.0'
     }
     repositories {
         google()

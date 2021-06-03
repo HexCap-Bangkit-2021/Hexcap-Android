@@ -16,6 +16,10 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String","API_KEY",'"5c41e9ac1ddf213d882b35c7c2ab8586"'
+        buildConfigField "String","API_PATH_IMAGE",'"https://image.tmdb.org/t/p/w500"'
+        buildConfigField "String","API_BASE_PATH",'"https://api.themoviedb.org/3/"'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,6 +54,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Import for CameraX
     def camerax_version = "1.0.0-beta10"
@@ -71,4 +76,11 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     implementation "io.alterac.blurkit:blurkit:1.1.0"
+
+    //viepager 2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
 }

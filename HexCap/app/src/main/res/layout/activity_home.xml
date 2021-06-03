@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rv_temple" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton1"
+        android:id="@+id/btn_tips"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
@@ -93,14 +93,15 @@
         app:iconSize="30dp"
         app:backgroundTint="@color/white"
         app:strokeColor="@color/greenslate"
-        app:strokeWidth="1dp"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+        app:strokeWidth="2dp"
+        app:elevation="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_funfact"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
+        android:id="@+id/btn_funfact"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
@@ -112,14 +113,15 @@
         app:iconSize="30dp"
         app:backgroundTint="@color/white"
         app:strokeColor="@color/greenslate"
-        app:strokeWidth="1dp"
-        app:layout_constraintEnd_toStartOf="@+id/materialButto3"
+        app:strokeWidth="2dp"
+        app:elevation="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_history"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/materialButton1"
+        app:layout_constraintStart_toEndOf="@+id/btn_tips"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButto3"
+        android:id="@+id/btn_history"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
@@ -131,14 +133,15 @@
         app:iconSize="30dp"
         app:backgroundTint="@color/white"
         app:strokeColor="@color/greenslate"
-        app:strokeWidth="1dp"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton4"
+        app:strokeWidth="2dp"
+        app:elevation="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_testimonial"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/materialButton2"
+        app:layout_constraintStart_toEndOf="@+id/btn_funfact"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton4"
+        android:id="@+id/btn_testimonial"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
@@ -150,10 +153,11 @@
         app:iconSize="30dp"
         app:backgroundTint="@color/white"
         app:strokeColor="@color/greenslate"
-        app:strokeWidth="1dp"
+        app:strokeWidth="2dp"
+        app:elevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/materialButto3"
+        app:layout_constraintStart_toEndOf="@+id/btn_history"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
