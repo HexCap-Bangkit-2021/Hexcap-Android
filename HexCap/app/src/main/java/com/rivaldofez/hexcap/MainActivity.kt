@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.rivaldofez.hexcap.ml.*
+import com.rivaldofez.hexcap.ui.TriviaActivity
 import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
 import com.rivaldofez.hexcap.util.YuvToRgbConverter
 import org.tensorflow.lite.support.image.TensorImage
@@ -97,7 +98,7 @@ class MainActivity : AppCompatActivity(), PredictionCallback {
 
     override fun onRecognitionClick(recognition: Recognition) {
         Toast.makeText(this, recognition.label, Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, DetailTempleActivity::class.java)
+        val intent = Intent(this, TriviaActivity::class.java)
         startActivity(intent)
     }
 

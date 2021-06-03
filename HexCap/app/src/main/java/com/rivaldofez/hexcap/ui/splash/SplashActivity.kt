@@ -10,7 +10,6 @@ import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivitySplashBinding
 import com.rivaldofez.hexcap.ui.home.HomeActivity
 import com.bumptech.glide.Glide
-import com.rivaldofez.hexcap.ui.TriviaActivity
 
 class SplashActivity : AppCompatActivity() {
     companion object {
@@ -28,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
         splashBinding.progressSplash.visibility = View.VISIBLE
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, TriviaActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
             splashBinding.progressSplash.visibility = View.INVISIBLE
         }, SPLASH_TIME)
