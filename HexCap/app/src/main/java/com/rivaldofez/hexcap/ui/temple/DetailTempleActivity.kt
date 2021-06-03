@@ -11,6 +11,7 @@ import androidx.core.widget.TextViewCompat
 import com.rivaldofez.hexcap.MainActivity
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
+import com.rivaldofez.hexcap.ui.maps.MapsActivity
 
 class DetailTempleActivity : AppCompatActivity() {
     private lateinit var detailTempleBinding: ActivityDetailTempleBinding
@@ -35,6 +36,11 @@ class DetailTempleActivity : AppCompatActivity() {
 
         detailTempleBinding.btnExplore.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        detailTempleBinding.btnShowMap.setOnClickListener{
+            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
     }
