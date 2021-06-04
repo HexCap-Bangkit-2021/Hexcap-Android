@@ -19,6 +19,9 @@ data class Trivia(
     @field:SerializedName("candi_id")
     val candiId: Int,
 
+    @field:SerializedName("candi_name")
+    val candiName: String,
+
     @field:SerializedName("slug")
     val slug: String
 )

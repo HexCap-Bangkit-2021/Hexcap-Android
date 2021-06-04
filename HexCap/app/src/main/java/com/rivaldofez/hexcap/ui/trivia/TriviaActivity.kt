@@ -41,5 +41,6 @@ class TriviaActivity : AppCompatActivity() {
         Glide.with(this).load(trivia.img).into(triviaBinding.imgTrivia)
         triviaBinding.tvName.text = trivia.name
         triviaBinding.tvDescription.text = trivia.trivia
+        triviaBinding.tvTemple.text = trivia.candiName
     }
 }

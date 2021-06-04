@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:padding="8dp"
-            android:text="@{recognitionItem.label}"
+            android:text="@{recognitionItem.name}"
             android:textColor="@color/white"
             android:textAppearance="?attr/textAppearanceHeadline6"
             tools:text="Orange" />
