@@ -1,9 +1,36 @@
 package com.rivaldofez.hexcap.data.source.model
 
-class Temple (
-    val name: String,
-    val trivia: String,
-    val slug: String,
+import com.google.gson.annotations.SerializedName
+
+data class Temple(
+
+    @field:SerializedName("img")
+    val img: String,
+
+    @field:SerializedName("address")
+    val address: String,
+
+    @field:SerializedName("city")
     val city: String,
-    val rating: Float
+
+    @field:SerializedName("name")
+    val name: String,
+
+    @field:SerializedName("rating")
+    val rating: Double,
+
+    @field:SerializedName("description")
+    val description: String,
+
+    @field:SerializedName("tagline")
+    val tagline: String,
+
+    @field:SerializedName("id")
+    val id: Int,
+
+    @field:SerializedName("lat")
+    val lat: Double,
+
+    @field:SerializedName("long")
+    val jsonMemberLong: Double
 )
