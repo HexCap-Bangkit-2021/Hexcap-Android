@@ -15,6 +15,7 @@ import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
 import com.rivaldofez.hexcap.ui.maps.MapsActivity
+import com.rivaldofez.hexcap.util.generateButtonTextView
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryTemple
 
 class DetailTempleActivity : AppCompatActivity() {
@@ -43,26 +44,8 @@ class DetailTempleActivity : AppCompatActivity() {
             }
         }
 
-//        val tvTaglineItem = TextView(this)
-//        val scale = resources.displayMetrics.density
-//        val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-//
-//        params.setMargins(0,0,(4 * scale + 0.5F).toInt(),0)
-//        tvTaglineItem.layoutParams = params
-//        tvTaglineItem.text = "Buddha"
-//        tvTaglineItem.background = ContextCompat.getDrawable(this, R.drawable.bg_tagline_item)
-//        TextViewCompat.setTextAppearance(tvTaglineItem, R.style.TaglineItem)
-//
-//        tvTaglineItem.setPadding((4 * scale + 0.5F).toInt())
-//        detailTempleBinding.llTagline.addView(tvTaglineItem)
-
         detailTempleBinding.btnExplore.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        detailTempleBinding.btnShowMap.setOnClickListener{
-            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
     }
@@ -74,5 +57,19 @@ class DetailTempleActivity : AppCompatActivity() {
         detailTempleBinding.tvCity.text = temple.city
         detailTempleBinding.tvRate.text = temple.rating.toString()
         detailTempleBinding.tvDescription.text = temple.description
+
+        val tags = temple.tagline.split(",").toTypedArray()
+        for(tag in tags){
+            this.generateButtonTextView(tag, detailTempleBinding.llTagline)
+        }
+
+        detailTempleBinding.btnShowMap.setOnClickListener{
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra(MapsActivity.EXTRA_LAT, temple.lat)
+            intent.putExtra(MapsActivity.EXTRA_LONG, temple.long)
+            intent.putExtra(MapsActivity.EXTRA_NAME, temple.name)
+            startActivity(intent)
+        }
+
     }
 }

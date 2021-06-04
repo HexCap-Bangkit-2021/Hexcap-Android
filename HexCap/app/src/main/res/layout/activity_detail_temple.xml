@@ -106,7 +106,7 @@
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/img_backdrop"
                     app:layout_constraintEnd_toStartOf="@+id/btn_show_map"
-                    app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_explore"

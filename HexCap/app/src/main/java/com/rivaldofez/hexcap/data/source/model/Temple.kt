@@ -32,5 +32,5 @@ data class Temple(
     val lat: Double,
 
     @field:SerializedName("long")
-    val jsonMemberLong: Double
+    val long: Double
 )

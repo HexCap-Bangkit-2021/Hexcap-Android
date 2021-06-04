@@ -26,14 +26,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
+    private var latTemple: Double = 0.0
+    private var longTemple: Double = 0.0
+    private lateinit var titleTemple: String
+
     companion object {
         private const val LOCATION_REQUEST_CODE = 111
+        const val EXTRA_LAT = "extra_lat"
+        const val EXTRA_LONG = "extra_long"
+        const val EXTRA_NAME = "extra_name"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mapsBinding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(mapsBinding.root)
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -41,26 +49,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        val bundle = intent.extras
+        if(bundle != null){
+            this.latTemple = bundle.getDouble(EXTRA_LAT)
+            this.longTemple = bundle.getDouble(EXTRA_LONG)
+            this.titleTemple = bundle.getString(EXTRA_NAME).toString()
+        }
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-//        // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        mMap.addMarker(MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_candi))
-//            .position(sydney).title("Marker in Sydney"))
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-
         mMap.uiSettings.isZoomControlsEnabled = true
 
         setUpMap()
+        setTempleMarker(latTemple, longTemple, titleTemple)
+    }
+
+    private fun setTempleMarker(lat: Double, long: Double, title: String){
+        val currentLatLong = LatLng(lat, long)
+        mMap.addMarker(MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_candi))
+            .position(currentLatLong).title(title))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
     }
 
     private fun setUpMap(){
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
             return
         }
         mMap.isMyLocationEnabled = true
@@ -71,7 +88,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 mMap.addMarker(MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_user))
                     .position(currentLatLong).title("Your Location"))
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
             }
         }
     }
