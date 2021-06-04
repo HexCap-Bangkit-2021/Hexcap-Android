@@ -1,9 +1,6 @@
 package com.rivaldofez.hexcap.data.source.remote.config
 
-import com.rivaldofez.hexcap.data.source.model.TempleDetailResponse
-import com.rivaldofez.hexcap.data.source.model.TempleResponse
-import com.rivaldofez.hexcap.data.source.model.TriviaDetailResponse
-import com.rivaldofez.hexcap.data.source.model.TriviaResponse
+import com.rivaldofez.hexcap.data.source.model.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -25,4 +22,12 @@ interface ApiService {
     fun getTriviaById(
         @Path("id") id: String
     ): Call<TriviaDetailResponse>
+
+    @GET("articles")
+    fun getAllArticles(): Call<ArticleResponse>
+
+    @GET("article/{category}")
+    fun getArticlesByCategory(
+        @Path("category") category: String
+    ): Call<ArticleResponse>
 }

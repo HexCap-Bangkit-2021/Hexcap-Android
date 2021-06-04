@@ -82,6 +82,38 @@ class RemoteDataSource {
         })
     }
 
+    fun getArticleByCategory(callback: LoadArticleByCategoryCallback, category: String){
+        val client = ApiConfig.getApiService().getArticlesByCategory(category)
+        client.enqueue(object: Callback<ArticleResponse>{
+            override fun onResponse(
+                call: Call<ArticleResponse>,
+                response: Response<ArticleResponse>
+            ) {
+                response.body()?.data?.let { callback.onArticleCategory(it) }
+            }
+
+            override fun onFailure(call: Call<ArticleResponse>, t: Throwable) {
+                Log.e("RemoteDataSource", "fail at getArticleCategory because: ${t.message}")
+            }
+        })
+    }
+
+    fun getAllArticle(callback: LoadAllArticleCallback){
+        val client = ApiConfig.getApiService().getAllArticles()
+        client.enqueue(object: Callback<ArticleResponse>{
+            override fun onResponse(
+                call: Call<ArticleResponse>,
+                response: Response<ArticleResponse>
+            ) {
+                response.body()?.data?.let { callback }
+            }
+
+            override fun onFailure(call: Call<ArticleResponse>, t: Throwable) {
+                Log.e("RemoteDataSource", "fail at getAllArticle because: ${t.message}")
+            }
+        })
+    }
+
     interface LoadAllTempleCallback{
         fun onAllTempleLoaded(templesResponse: List<Temple>)
     }
@@ -96,5 +128,13 @@ class RemoteDataSource {
 
     interface LoadDetailTriviaCallback{
         fun onAllTriviaLoaded(triviaResponse: Trivia)
+    }
+
+    interface LoadAllArticleCallback{
+        fun onAllArticleLoaded(articleResponse: List<Article>)
+    }
+
+    interface LoadArticleByCategoryCallback{
+        fun onArticleCategory(articleResponse: List<Article>)
     }
 }
