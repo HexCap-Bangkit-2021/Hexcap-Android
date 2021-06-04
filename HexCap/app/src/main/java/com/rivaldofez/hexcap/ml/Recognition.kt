@@ -1,6 +1,6 @@
 package com.rivaldofez.hexcap.ml
 
-data class Recognition(val label:String, val confidence:Float) {
+data class Recognition(val name:String, val confidence:Float, val label:String ) {
 
     // For easy logging
     override fun toString():String{

@@ -1,4 +1,4 @@
-package com.rivaldofez.hexcap
+package com.rivaldofez.hexcap.ml
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -24,17 +24,15 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import com.rivaldofez.hexcap.ml.*
-import com.rivaldofez.hexcap.ui.TriviaActivity
-import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
+import com.rivaldofez.hexcap.R
+import com.rivaldofez.hexcap.ui.trivia.TriviaActivity
 import com.rivaldofez.hexcap.util.YuvToRgbConverter
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
 import java.util.concurrent.Executors
-import kotlin.random.Random
 
 // Constants
-private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
+private const val MAX_RESULT_DISPLAY = 1 // Maximum number of results displayed
 private const val TAG = "TFL Classify" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA) // permission needed
@@ -45,7 +43,7 @@ typealias RecognitionListener = (recognition: List<Recognition>) -> Unit
 /**
  * Main entry point into TensorFlow Lite Classifier
  */
-class MainActivity : AppCompatActivity(), PredictionCallback {
+class TriviaFinderActivity : AppCompatActivity(), PredictionCallback {
 
     // CameraX variables
     private lateinit var preview: Preview // Preview use case, fast, responsive view of the camera
@@ -99,6 +97,7 @@ class MainActivity : AppCompatActivity(), PredictionCallback {
     override fun onRecognitionClick(recognition: Recognition) {
         Toast.makeText(this, recognition.label, Toast.LENGTH_SHORT).show()
         val intent = Intent(this, TriviaActivity::class.java)
+        intent.putExtra(TriviaActivity.EXTRA_ID_TRIVIA, recognition.label)
         startActivity(intent)
     }
 
@@ -222,7 +221,16 @@ class MainActivity : AppCompatActivity(), PredictionCallback {
 
             // TODO 4: Converting the top probability items into a list of recognitions
             for(output in outputs){
-                items.add(Recognition(output.label, output.score))
+                if(output.label == "relief_jataka")
+                    items.add(Recognition("Relief Jataka", output.score, output.label))
+                else if(output.label == "makara_mendut")
+                    items.add(Recognition("Makara Mendut", output.score, output.label))
+                else if(output.label == "relief_betet")
+                    items.add(Recognition("Relief Betet", output.score, output.label))
+                else if(output.label == "bajra_mendut")
+                    items.add(Recognition("Bajra Mendut", output.score, output.label))
+                else
+                    items.add(Recognition("Unknown", output.score, output.label))
             }
 
             // Return the result

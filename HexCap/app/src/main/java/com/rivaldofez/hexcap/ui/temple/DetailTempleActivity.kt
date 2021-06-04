@@ -10,10 +10,10 @@ import androidx.core.view.setPadding
 import androidx.core.widget.TextViewCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.rivaldofez.hexcap.MainActivity
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
+import com.rivaldofez.hexcap.ml.TriviaFinderActivity
 import com.rivaldofez.hexcap.ui.maps.MapsActivity
 import com.rivaldofez.hexcap.util.generateButtonTextView
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryTemple
@@ -45,7 +45,7 @@ class DetailTempleActivity : AppCompatActivity() {
         }
 
         detailTempleBinding.btnExplore.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, TriviaFinderActivity::class.java)
             startActivity(intent)
         }
     }
