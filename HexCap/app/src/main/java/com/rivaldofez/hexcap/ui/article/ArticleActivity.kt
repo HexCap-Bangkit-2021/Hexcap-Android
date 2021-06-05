@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.StringRes
 import com.google.android.material.tabs.TabLayoutMediator
+import com.ogaclejapan.smarttablayout.SmartTabLayout
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivityArticleBinding
 
@@ -27,6 +28,7 @@ class ArticleActivity : AppCompatActivity() {
 
         val articlePagerAdapter = ArticlePagerAdapter(this)
         articleBinding.vpArticle.adapter = articlePagerAdapter
+
         TabLayoutMediator(articleBinding.tbArticle, articleBinding.vpArticle){tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
