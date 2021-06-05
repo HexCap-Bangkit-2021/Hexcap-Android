@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/k2d_regular"
-        android:text="Hello, Siap untuk bereksplorasi dengan Candhi?"
+        android:text="@string/greeting"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Top Temple Destination"
+        android:text="@string/greeting_destination"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Article Categories"
+        android:text="@string/greeting_article"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,18 +83,20 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:contentDescription="@string/cd_icon"
                 android:src="@drawable/ic_tips" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Tips"
+                android:text="@string/tips"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -117,18 +119,20 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_funfact" />
+                android:src="@drawable/ic_funfact"
+                android:contentDescription="@string/cd_icon"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Fun Fact"
+                android:text="@string/fun_fact"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -151,18 +155,20 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="8dp"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_history" />
+                android:src="@drawable/ic_history"
+                android:contentDescription="@string/cd_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="History"
+                android:text="@string/history"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>

@@ -13,6 +13,7 @@
         <ImageView
             android:id="@+id/img_article"
             android:layout_width="match_parent"
+            android:contentDescription="@string/cd_image_article"
             android:layout_height="250dp"
             android:scaleType="fitXY"
             android:src="@drawable/borobudur"
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="10 Juli 2020"
+            tools:text="10 Juli 2020"
             app:layout_constraintBottom_toBottomOf="@+id/img_article"
             android:textColor="@color/silver"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -50,12 +51,12 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Relief Jataka"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Relief Jataka"/>
 
                 <TextView
                     android:id="@+id/tv_writer"
@@ -65,13 +66,13 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Posted by: Rivaldo Fernandes"
                     android:textColor="@color/silver"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    tools:text="Posted by: Rivaldo Fernandes"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -83,13 +84,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Lorem ipsum dolor sit amet"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Lorem ipsum dolor sit amet"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

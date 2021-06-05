@@ -20,10 +20,11 @@
             android:layout_width="180dp"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/borobudur"
+            android:contentDescription="@string/cd_image_candi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/borobudur"/>
 
         <TextView
             android:id="@+id/tv_rate"
@@ -32,8 +33,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_star"
-            android:text="4.5"
-            android:textSize="9sp"
+            android:textSize="12sp"
             android:textAlignment="center"
             android:fontFamily="@font/k2d_regular"
             android:textColor="@color/white"
@@ -43,7 +43,9 @@
             android:paddingBottom="3dp"
             android:background="@drawable/bg_rating"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseCompatTextViewDrawableXml"
+            tools:text="4.5"/>
 
         <TextView
             android:id="@+id/tv_name"
@@ -52,12 +54,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="4dp"
-            android:text="Candi Borobudur"
             android:maxLines="2"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/ll_city"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Candi Borobudur"/>
 
         <LinearLayout
             android:id="@+id/ll_city"
@@ -70,21 +72,23 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/img_temple"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:src="@drawable/ic_location" />
+                android:src="@drawable/ic_location"
+                android:contentDescription="@string/cd_icon"/>
 
             <TextView
                 android:id="@+id/tv_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:text="Magelang"
+                android:layout_marginStart="2dp"
                 android:textColor="@color/silver"
-                android:textSize="9sp" />
+                android:textSize="9sp"
+                tools:text="Magelang"/>
 
         </LinearLayout>
 

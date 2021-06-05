@@ -15,7 +15,8 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
-        tools:context=".ui.maps.MapsActivity" />
+        tools:context=".ui.maps.MapsActivity"
+        tools:ignore="FragmentTagUsage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

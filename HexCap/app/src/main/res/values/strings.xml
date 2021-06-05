@@ -8,4 +8,22 @@
     <string name="funfact">Fun Fact</string>
     <string name="history">History</string>
     <string name="tipsandtrick">Tips</string>
+    <string name="cd_image_candi">Gambar Candi</string>
+    <string name="cd_icon">Gambar Icon</string>
+    <string name="tv_posted_on">Posted on</string>
+    <string name="trivia_finder">Trivia Finder</string>
+    <string name="prediction">Prediction</string>
+    <string name="trivia">TRIVIA</string>
+    <string name="greeting">Hello, Siap untuk bereksplorasi dengan Candhi?</string>
+    <string name="greeting_destination">Top Temple Destination</string>
+    <string name="greeting_article">Article Categories</string>
+    <string name="tips">Tips</string>
+    <string name="fun_fact">Fun Fact</string>
+    <string name="history">History</string>
+    <string name="tagline">Tagline</string>
+    <string name="find_object">Find Object</string>
+    <string name="description">Description</string>
+    <string name="address">Address</string>
+    <string name="detail_information">Detail Information</string>
+    <string name="cd_image_article">Gambar Artikel</string>
 </resources>

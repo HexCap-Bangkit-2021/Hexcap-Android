@@ -45,7 +45,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Candi Borobudur"
                     android:textColor="@color/white"
                     android:textSize="36sp"
                     android:textStyle="bold"
@@ -53,7 +52,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.37" />
+                    app:layout_constraintVertical_bias="0.37"
+                    tools:text="Candi Borobudur"/>
 
                 <LinearLayout
                     android:id="@+id/ll_city"
@@ -63,23 +63,26 @@
                     android:layout_marginEnd="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
+                    android:contentDescription="@string/cd_icon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name">
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/ic_location" />
+                        android:src="@drawable/ic_location"
+                        android:contentDescription="@string/cd_icon"/>
 
                     <TextView
                         android:id="@+id/tv_city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
-                        android:text="Magelang"
+                        android:layout_marginStart="2dp"
                         android:textColor="@color/gainsboro"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:text="Magelang"/>
                 </LinearLayout>
 
                 <TextView
@@ -89,7 +92,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Tagline"
+                    android:text="@string/tagline"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toTopOf="@+id/ll_tagline"
@@ -114,7 +117,7 @@
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="Find Object"
+                    android:text="@string/find_object"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/peru"
                     android:elevation="10dp"
@@ -129,18 +132,18 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="32dp"
                     android:background="@drawable/bg_rating"
-                    android:drawableStart="@drawable/ic_star"
                     android:fontFamily="@font/k2d_regular"
                     android:paddingLeft="6dp"
                     android:paddingTop="3dp"
                     android:paddingRight="6dp"
                     android:paddingBottom="3dp"
-                    android:text="4.5"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="9sp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_name"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:drawableStartCompat="@drawable/ic_star"
+                    tools:text="4.5"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -155,7 +158,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAlignment="center"
-                android:text="Detail Information"/>
+                android:text="@string/detail_information"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -171,7 +174,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:text="Address"
+                android:text="@string/address"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -187,6 +190,7 @@
                 android:layout_marginEnd="16dp"
                 android:padding="8dp"
                 android:src="@drawable/ic_show_map"
+                android:contentDescription="@string/cd_icon"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_address"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -197,11 +201,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
-                android:text="Lorem ipsum dolor sit amaet"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/btn_show_map"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_address_title" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_address_title"
+                tools:text="Lorem ipsum dolor sit amaet"/>
 
             <TextView
                 android:id="@+id/tv_description_title"
@@ -210,7 +214,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Description"
+                android:text="@string/description"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -225,10 +229,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:textSize="16sp"
-                android:text="Lorem ipsum dolor sit amaet"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description_title" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_description_title"
+                tools:text="Lorem ipsum dolor sit amaet"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
