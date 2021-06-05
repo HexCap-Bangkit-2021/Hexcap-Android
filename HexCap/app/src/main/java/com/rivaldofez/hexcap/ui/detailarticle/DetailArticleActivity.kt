@@ -3,9 +3,7 @@ package com.rivaldofez.hexcap.ui.detailarticle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Article
-import com.rivaldofez.hexcap.databinding.ActivityArticleBinding
 import com.rivaldofez.hexcap.databinding.ActivityDetailArticleBinding
 import com.rivaldofez.hexcap.util.formatDate
 

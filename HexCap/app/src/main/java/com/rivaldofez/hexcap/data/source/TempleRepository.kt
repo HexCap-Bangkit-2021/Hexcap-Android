@@ -36,9 +36,9 @@ class TempleRepository(private val remoteDataSource: RemoteDataSource): TempleDa
         val detailTempleResult = MutableLiveData<Temple>()
 
         remoteDataSource.getDetailTemple(templeId = templeId, callback = object: RemoteDataSource.LoadDetailTempleCallback{
-            override fun onDetailTempleLoaded(templeResponse: Temple) {
+            override fun onDetailTempleLoaded(templesResponse: Temple) {
                 isLoading.value = false
-                detailTempleResult.postValue(templeResponse)
+                detailTempleResult.postValue(templesResponse)
             }
         })
 

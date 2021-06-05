@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.rivaldofez.hexcap.data.source.TempleRepository
 import com.rivaldofez.hexcap.di.Injection
-import com.rivaldofez.hexcap.ui.home.HomeViewModel
 import com.rivaldofez.hexcap.ui.temple.DetailTempleViewModel
 
 class ViewModelFactoryTemple private constructor(private val templeRepository: TempleRepository): ViewModelProvider.NewInstanceFactory(){
@@ -19,6 +18,7 @@ class ViewModelFactoryTemple private constructor(private val templeRepository: T
             }
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(DetailTempleViewModel::class.java) -> {

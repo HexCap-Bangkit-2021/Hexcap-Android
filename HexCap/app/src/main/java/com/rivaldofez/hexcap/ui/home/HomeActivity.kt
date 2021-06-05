@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityHomeBinding
 import com.rivaldofez.hexcap.ui.article.ArticleActivity
@@ -34,10 +35,21 @@ class HomeActivity : AppCompatActivity(), TempleCallback {
 
         homeBinding.btnTips.setOnClickListener {
             val intent = Intent(this, ArticleActivity::class.java)
+            intent.putExtra(ArticleActivity.EXTRA_ID_PAGE, getString(R.string.tips))
             startActivity(intent)
-            Toast.makeText(this, "Funfact", Toast.LENGTH_SHORT).show()
         }
 
+        homeBinding.btnFunfact.setOnClickListener{
+            val intent = Intent(this, ArticleActivity::class.java)
+            intent.putExtra(ArticleActivity.EXTRA_ID_PAGE, getString(R.string.funfact))
+            startActivity(intent)
+        }
+
+        homeBinding.btnHistory.setOnClickListener {
+            val intent = Intent(this, ArticleActivity::class.java)
+            intent.putExtra(ArticleActivity.EXTRA_ID_PAGE, getString(R.string.history))
+            startActivity(intent)
+        }
     }
 
     override fun onTempleClick(temple: Temple) {

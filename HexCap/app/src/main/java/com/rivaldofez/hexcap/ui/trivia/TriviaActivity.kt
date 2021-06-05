@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.rivaldofez.hexcap.data.source.model.Trivia
@@ -77,10 +76,9 @@ class TriviaActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     override fun onDestroy() {
-        if(textToSpeech != null){
-            textToSpeech.stop()
-            textToSpeech.shutdown()
-        }
+        textToSpeech.stop()
+        textToSpeech.shutdown()
+
         super.onDestroy()
     }
 }

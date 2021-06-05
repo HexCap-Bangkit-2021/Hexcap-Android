@@ -29,19 +29,6 @@ import android.renderscript.Type
 import com.rivaldofez.hexcap.BuildConfig
 import java.nio.ByteBuffer
 
-/**
- * Helper class used to efficiently convert a [Media.Image] object from
- * [ImageFormat.YUV_420_888] format to an RGB [Bitmap] object.
- *
- * The [yuvToRgb] method is able to achieve the same FPS as the CameraX image
- * analysis use case on a Pixel 3 XL device at the default analyzer resolution,
- * which is 30 FPS with 640x480.
- *
- * NOTE: This has been tested in a limited number of devices and is not
- * considered production-ready code. It was created for illustration purposes,
- * since this is not an efficient camera pipeline due to the multiple copies
- * required to convert each frame.
- */
 class YuvToRgbConverter(context: Context) {
     private val rs = RenderScript.create(context)
     private val scriptYuvToRgb = ScriptIntrinsicYuvToRGB.create(rs, Element.U8_4(rs))

@@ -3,14 +3,8 @@ package com.rivaldofez.hexcap.ui.temple
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.view.setPadding
-import androidx.core.widget.TextViewCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
 import com.rivaldofez.hexcap.ml.TriviaFinderActivity

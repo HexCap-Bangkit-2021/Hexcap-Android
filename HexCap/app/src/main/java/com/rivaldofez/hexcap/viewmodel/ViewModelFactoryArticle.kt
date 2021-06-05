@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.rivaldofez.hexcap.data.source.ArticleRepository
 import com.rivaldofez.hexcap.di.Injection
 import com.rivaldofez.hexcap.ui.article.ArticleViewModel
-import com.rivaldofez.hexcap.ui.home.HomeViewModel
 
 class ViewModelFactoryArticle private constructor(private val articleRepository: ArticleRepository): ViewModelProvider.NewInstanceFactory(){
     companion object{
@@ -19,6 +18,7 @@ class ViewModelFactoryArticle private constructor(private val articleRepository:
             }
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(ArticleViewModel::class.java) -> {

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.rivaldofez.hexcap.data.source.model.Article
 import com.rivaldofez.hexcap.data.source.remote.RemoteDataSource
-import java.util.*
 
 class ArticleRepository(private val remoteDataSource: RemoteDataSource): ArticleDataSource {
     val isLoading = MutableLiveData<Boolean>()
