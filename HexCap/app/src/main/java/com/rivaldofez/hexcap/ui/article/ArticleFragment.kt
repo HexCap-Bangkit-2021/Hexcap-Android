@@ -1,5 +1,6 @@
 package com.rivaldofez.hexcap.ui.article
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Article
 import com.rivaldofez.hexcap.databinding.FragmentArticleBinding
+import com.rivaldofez.hexcap.ui.detailarticle.DetailArticleActivity
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryArticle
 
 
@@ -60,6 +62,8 @@ class ArticleFragment : Fragment(), ArticleCallback {
     }
 
     override fun onArticleClick(article: Article) {
-        Log.d("teston", article.description)
+        val detailArticleIntent = Intent(requireActivity(), DetailArticleActivity::class.java)
+        detailArticleIntent.putExtra(DetailArticleActivity.EXTRA_DETAIL_ARTICLE, article)
+        startActivity(detailArticleIntent)
     }
 }

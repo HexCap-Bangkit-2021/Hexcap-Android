@@ -1,7 +1,10 @@
 package com.rivaldofez.hexcap.data.source.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Article(
 
     @field:SerializedName("img")
@@ -24,4 +27,4 @@ data class Article(
 
     @field:SerializedName("category")
     val category: String
-)
+):Parcelable

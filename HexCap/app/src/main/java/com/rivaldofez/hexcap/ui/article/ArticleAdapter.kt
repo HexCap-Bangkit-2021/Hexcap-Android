@@ -37,6 +37,7 @@ class ArticleAdapter(private val callback: ArticleCallback): RecyclerView.Adapte
                 tvTitle.text = article.title
                 tvDatepost.text = "Posted on " + formatDate(article.datePost)
                 Glide.with(itemView.context).load(article.img).into(imgArticle)
+                clArticle.setOnClickListener { callback.onArticleClick(article) }
             }
         }
     }
