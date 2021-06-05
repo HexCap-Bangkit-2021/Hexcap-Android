@@ -10,11 +10,10 @@ class ArticlePagerAdapter (activity: AppCompatActivity): FragmentStateAdapter(ac
         const val mFunfact = "funfact"
         const val mTips = "tipsandtrick"
         const val mHistory = "history"
-        const val mTestimonial = "testimonial"
     }
 
     override fun getItemCount(): Int {
-        return 4
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -37,12 +36,6 @@ class ArticlePagerAdapter (activity: AppCompatActivity): FragmentStateAdapter(ac
                 val fragmentHistory = ArticleFragment()
                 fragmentHistory.option = mHistory
                 fragment = fragmentHistory
-            }
-
-            3 -> {
-                val fragmentTestimonial = ArticleFragment()
-                fragmentTestimonial.option = mTestimonial
-                fragment = fragmentTestimonial
             }
         }
         return fragment!!

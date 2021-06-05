@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HexCap</string>
+    <string name="app_name">Candhi</string>
     <string name="permission_deny_text">Required permissions denied. Exiting.</string>
     <string name="title_activity_maps">Map</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -7,6 +7,5 @@
 
     <string name="funfact">Fun Fact</string>
     <string name="history">History</string>
-    <string name="tipsandtrick">Tips Trick</string>
-    <string name="testimony">Testimony</string>
+    <string name="tipsandtrick">Tips</string>
 </resources>

@@ -14,10 +14,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/k2d_regular"
-        android:textStyle="bold"
         android:text="Hello, Siap untuk bereksplorasi dengan Candhi?"
         android:textColor="@color/black"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,9 +30,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textStyle="bold"
         android:text="Top Temple Destination"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -59,90 +59,114 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Article Categories"
-        android:textStyle="bold"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_temple" />
 
-    <com.google.android.material.button.MaterialButton
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/btn_tips"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:minWidth="0dp"
-        app:icon="@drawable/ic_tips"
-        app:iconTint="@null"
-        app:iconPadding="0dp"
-        app:iconGravity="textEnd"
-        app:iconSize="30dp"
-        app:backgroundTint="@color/white"
-        app:strokeColor="@color/greenslate"
-        app:strokeWidth="2dp"
-        app:elevation="12dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_funfact"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-    <com.google.android.material.button.MaterialButton
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_tips" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Tips"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/btn_funfact"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:minWidth="0dp"
-        app:icon="@drawable/ic_funfact"
-        app:iconTint="@null"
-        app:iconPadding="0dp"
-        app:iconGravity="textEnd"
-        app:iconSize="30dp"
-        app:backgroundTint="@color/white"
-        app:strokeColor="@color/greenslate"
-        app:strokeWidth="2dp"
-        app:elevation="12dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_history"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_tips"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-    <com.google.android.material.button.MaterialButton
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_funfact" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Fun Fact"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/btn_history"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:minWidth="0dp"
-        app:icon="@drawable/ic_history"
-        app:iconTint="@null"
-        app:iconPadding="0dp"
-        app:iconGravity="textEnd"
-        app:iconSize="30dp"
-        app:backgroundTint="@color/white"
-        app:strokeColor="@color/greenslate"
-        app:strokeWidth="2dp"
-        app:elevation="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_testimonial"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_funfact"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_testimonial"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:minWidth="0dp"
-        app:icon="@drawable/ic_testimonial"
-        app:iconTint="@null"
-        app:iconPadding="0dp"
-        app:iconGravity="textEnd"
-        app:iconSize="30dp"
-        app:backgroundTint="@color/white"
-        app:strokeColor="@color/greenslate"
-        app:strokeWidth="2dp"
-        app:elevation="12dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_history"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/btn_funfact"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

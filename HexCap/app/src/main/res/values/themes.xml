@@ -21,10 +21,18 @@
         <item name="iconTint">@color/gainsboro</item>
     </style>
 
+    <style name="BottomRoundImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">32dp</item>
+        <item name="cornerSizeBottomRight">32dp</item>
+    </style>
+
     <style name="RoundImageView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeBottomLeft">32dp</item>
         <item name="cornerSizeBottomRight">32dp</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeTopLeft">32dp</item>
     </style>
 
     <style name="TaglineItem">

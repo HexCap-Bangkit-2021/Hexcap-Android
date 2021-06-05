@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HexCap">
-        <activity android:name=".ui.article.ArticleActivity"/>
+        <activity android:name=".ui.detailarticle.DetailArticleActivity"></activity>
+        <activity android:name=".ui.article.ArticleActivity" />
         <activity android:name=".ui.trivia.TriviaActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>

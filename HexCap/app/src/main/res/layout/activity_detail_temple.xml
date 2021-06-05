@@ -37,7 +37,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/RoundImageView" />
+                    app:shapeAppearanceOverlay="@style/BottomRoundImageView" />
 
                 <TextView
                     android:id="@+id/tv_name"
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:text="Magelang"
-                        android:textColor="@color/silver"
+                        android:textColor="@color/gainsboro"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -91,7 +91,7 @@
                     android:layout_marginBottom="8dp"
                     android:text="Tagline"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toTopOf="@+id/ll_tagline"
                     app:layout_constraintEnd_toStartOf="@+id/btn_explore"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -105,7 +105,7 @@
                     android:layout_marginBottom="24dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/img_backdrop"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_show_map"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_explore"
                     app:layout_constraintStart_toStartOf="parent"/>
 
                 <com.google.android.material.button.MaterialButton
@@ -114,22 +114,13 @@
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="Explore"
+                    android:text="Find Object"
                     android:textColor="@color/white"
+                    android:backgroundTint="@color/peru"
+                    android:elevation="10dp"
                     app:cornerRadius="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
-
-                <ImageView
-                    android:id="@+id/btn_show_map"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_show_map"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_explore" />
 
                 <TextView
                     android:id="@+id/tv_rate"
@@ -179,24 +170,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="Address"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_show_map"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_show_map"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_show_map"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_address"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
                 android:text="Lorem ipsum dolor sit amaet"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_show_map"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_address_title" />
 

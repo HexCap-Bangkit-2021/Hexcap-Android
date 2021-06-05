@@ -5,6 +5,7 @@ buildscript {
         glideVersion = '4.11.0'
         okhttp3_version = '4.9.0'
         retrofit_version = '2.9.0'
+        percentageChartVersion = '0.3.0'
     }
     repositories {
         google()

@@ -15,7 +15,6 @@ class ArticleActivity : AppCompatActivity() {
             R.string.funfact,
             R.string.tipsandtrick,
             R.string.history,
-            R.string.testimony
         )
     }
 

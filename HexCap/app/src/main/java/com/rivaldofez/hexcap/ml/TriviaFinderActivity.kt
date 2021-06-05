@@ -64,7 +64,7 @@ class TriviaFinderActivity : AppCompatActivity(), PredictionCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_trivia_finder)
 
         // Request camera permissions
         if (allPermissionsGranted()) {

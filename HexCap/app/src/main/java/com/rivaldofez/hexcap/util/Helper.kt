@@ -7,6 +7,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
 import androidx.core.widget.TextViewCompat
 import com.rivaldofez.hexcap.R
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun Context.generateButtonTextView(text: String, layout: LinearLayout){
     val tvItem = TextView(this)
@@ -19,6 +22,19 @@ fun Context.generateButtonTextView(text: String, layout: LinearLayout){
     tvItem.background = ContextCompat.getDrawable(this, R.drawable.bg_tagline_item)
     TextViewCompat.setTextAppearance(tvItem, R.style.TaglineItem)
 
-    tvItem.setPadding((3 * scale + 0.5F).toInt())
+    tvItem.setPadding((4 * scale + 0.5F).toInt())
     layout.addView(tvItem)
+}
+
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+fun formatDate(value: String): String{
+    try {
+        val split = value.split("Z").toTypedArray()
+        val date = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(split[0])
+        return SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(date) + " " + split[1]
+
+    } catch (e: ParseException) {
+        print("Error while parse date" + e.message.toString())
+        return "-"
+    }
 }

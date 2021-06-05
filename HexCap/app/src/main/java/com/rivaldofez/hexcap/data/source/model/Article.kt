@@ -10,6 +10,9 @@ data class Article(
     @field:SerializedName("description")
     val description: String,
 
+    @field:SerializedName("title")
+    val title: String,
+
     @field:SerializedName("date_post")
     val datePost: String,
 

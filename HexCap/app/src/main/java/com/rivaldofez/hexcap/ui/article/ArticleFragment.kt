@@ -32,15 +32,7 @@ class ArticleFragment : Fragment(), ArticleCallback {
         val factory = ViewModelFactoryArticle.getInstance()
         val viewModel = ViewModelProvider(this, factory)[ArticleViewModel::class.java]
 
-        if(option == ArticlePagerAdapter.mTestimonial){
-            val testimonialAdapter = ArticleAdapter(this)
-            binding.rvArticle.layoutManager = LinearLayoutManager(requireActivity())
-            binding.rvArticle.adapter = testimonialAdapter
-            viewModel.setCurrentCategory("testimonial")
-            viewModel.getArticleByCategory().observe(viewLifecycleOwner,{articles ->
-                testimonialAdapter.setArticles(articles)
-            })
-        }else if(option == ArticlePagerAdapter.mHistory){
+        if(option == ArticlePagerAdapter.mHistory){
             val historyAdapter = ArticleAdapter(this)
             binding.rvArticle.layoutManager = LinearLayoutManager(requireActivity())
             binding.rvArticle.adapter = historyAdapter

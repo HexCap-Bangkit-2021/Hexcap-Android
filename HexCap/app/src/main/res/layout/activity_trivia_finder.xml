@@ -41,20 +41,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Prediction"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:background="#8000"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recognitionResults" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recognitionResults"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
+        android:background="#8000"
         android:layout_gravity="bottom"
         android:orientation="vertical"
+        android:padding="16dp"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

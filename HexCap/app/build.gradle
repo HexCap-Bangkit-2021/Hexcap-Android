@@ -80,5 +80,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
 
+    implementation "com.ramijemli.percentagechartview:percentagechartview:$percentageChartVersion"
+
     implementation "com.ogaclejapan.smarttablayout:library:2.0.0@aar"
 }
