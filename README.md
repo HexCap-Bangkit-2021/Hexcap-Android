@@ -27,7 +27,7 @@ Go to this link [Temple Model](https://developer.android.com/studio) to know how
 
 To run Candhi, clone and insert your custom model (or use default model which added from this repo). After that build this project.
 
-### Next Improvement 
+### Next Improvement 📈
 
 Rebrand Product and Enhance Tourist Travel Experience with Gamification
 
