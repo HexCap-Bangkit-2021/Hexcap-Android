@@ -10,6 +10,7 @@ import com.rivaldofez.hexcap.databinding.ActivityDetailTempleBinding
 import com.rivaldofez.hexcap.ml.TriviaFinderActivity
 import com.rivaldofez.hexcap.ui.maps.MapsActivity
 import com.rivaldofez.hexcap.util.generateButtonTextView
+import com.rivaldofez.hexcap.util.showLoading
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryTemple
 
 class DetailTempleActivity : AppCompatActivity() {
@@ -34,6 +35,10 @@ class DetailTempleActivity : AppCompatActivity() {
                 viewModel.setCurrentTemple(templeId)
                 viewModel.getDetailTemple().observe(this,{temple->
                     setContentView(temple)
+                })
+
+                viewModel.getLoadingStatus().observe(this, {status ->
+                    showLoading(status, detailTempleBinding.loading)
                 })
             }
         }

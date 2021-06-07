@@ -24,6 +24,7 @@ class ArticleRepository(private val remoteDataSource: RemoteDataSource): Article
         remoteDataSource.getAllArticle(object : RemoteDataSource.LoadAllArticleCallback{
             override fun onAllArticleLoaded(articleResponse: List<Article>) {
                 articleResults.postValue(articleResponse)
+                isLoading.value = false
             }
         })
         return articleResults
@@ -36,6 +37,7 @@ class ArticleRepository(private val remoteDataSource: RemoteDataSource): Article
         remoteDataSource.getArticleByCategory(category = category, callback = object: RemoteDataSource.LoadArticleByCategoryCallback{
             override fun onArticleCategory(articleResponse: List<Article>) {
                 articleResults.postValue(articleResponse)
+                isLoading.value = false
             }
         })
 

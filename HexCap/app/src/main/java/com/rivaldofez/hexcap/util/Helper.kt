@@ -1,11 +1,14 @@
 package com.rivaldofez.hexcap.util
 
 import android.content.Context
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
 import androidx.core.widget.TextViewCompat
+import com.github.ybq.android.spinkit.SpinKitView
+import com.github.ybq.android.spinkit.style.DoubleBounce
 import com.rivaldofez.hexcap.R
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -36,5 +39,15 @@ fun formatDate(value: String): String{
     } catch (e: ParseException) {
         print("Error while parse date" + e.message.toString())
         return "-"
+    }
+}
+
+fun showLoading(status: Boolean, loading: SpinKitView){
+    if(status){
+        val sprite = DoubleBounce()
+        loading.visibility = View.VISIBLE
+        loading.setIndeterminateDrawable(sprite)
+    }else{
+        loading.visibility = View.GONE
     }
 }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rivaldofez.hexcap.data.source.model.Article
 import com.rivaldofez.hexcap.databinding.FragmentArticleBinding
 import com.rivaldofez.hexcap.ui.detailarticle.DetailArticleActivity
+import com.rivaldofez.hexcap.util.showLoading
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryArticle
 
 
@@ -57,6 +58,7 @@ class ArticleFragment : Fragment(), ArticleCallback {
                 funfactAdapter.setArticles(articles)
             })
         }
+
     }
 
     override fun onArticleClick(article: Article) {

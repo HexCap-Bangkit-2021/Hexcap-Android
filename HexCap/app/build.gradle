@@ -82,5 +82,5 @@ dependencies {
 
     implementation "com.ramijemli.percentagechartview:percentagechartview:$percentageChartVersion"
 
-    implementation "com.ogaclejapan.smarttablayout:library:2.0.0@aar"
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }

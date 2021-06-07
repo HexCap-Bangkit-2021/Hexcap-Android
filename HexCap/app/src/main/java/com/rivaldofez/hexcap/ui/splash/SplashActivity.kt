@@ -10,6 +10,7 @@ import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.databinding.ActivitySplashBinding
 import com.rivaldofez.hexcap.ui.home.HomeActivity
 import com.bumptech.glide.Glide
+import com.github.ybq.android.spinkit.style.DoubleBounce
 
 class SplashActivity : AppCompatActivity() {
     companion object {
@@ -24,12 +25,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(splashBinding.root)
 
         Glide.with(this).load(R.drawable.logo_candhi).into(splashBinding.imgLogoSplash)
-        splashBinding.progressSplash.visibility = View.VISIBLE
+
+        val sprite = DoubleBounce()
+        splashBinding.loading.visibility = View.VISIBLE
+        splashBinding.loading.setIndeterminateDrawable(sprite)
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
-            splashBinding.progressSplash.visibility = View.INVISIBLE
+            splashBinding.loading.visibility = View.INVISIBLE
         }, SPLASH_TIME)
     }
 }

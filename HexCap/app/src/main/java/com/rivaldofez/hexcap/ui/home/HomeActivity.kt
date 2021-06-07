@@ -3,14 +3,18 @@ package com.rivaldofez.hexcap.ui.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.ybq.android.spinkit.style.DoubleBounce
+import com.github.ybq.android.spinkit.style.FoldingCube
 import com.rivaldofez.hexcap.R
 import com.rivaldofez.hexcap.data.source.model.Temple
 import com.rivaldofez.hexcap.databinding.ActivityHomeBinding
 import com.rivaldofez.hexcap.ui.article.ArticleActivity
 import com.rivaldofez.hexcap.ui.temple.DetailTempleActivity
+import com.rivaldofez.hexcap.util.showLoading
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryHome
 
 class HomeActivity : AppCompatActivity(), TempleCallback {
@@ -28,6 +32,10 @@ class HomeActivity : AppCompatActivity(), TempleCallback {
 
         viewModel.getAllTemple().observe(this, {temples->
             adapter.setTemples(temples)
+        })
+
+        viewModel.getLoadingStatus().observe(this,{status ->
+            showLoading(status, homeBinding.loading)
         })
 
         homeBinding.rvTemple.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -56,6 +64,5 @@ class HomeActivity : AppCompatActivity(), TempleCallback {
         val intent = Intent(this, DetailTempleActivity::class.java)
         intent.putExtra(DetailTempleActivity.EXTRA_ID_TEMPLE, temple.id.toString())
         startActivity(intent)
-        Toast.makeText(this, temple.name, Toast.LENGTH_SHORT).show()
     }
 }

@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.rivaldofez.hexcap.data.source.model.Trivia
 import com.rivaldofez.hexcap.databinding.ActivityTriviaBinding
+import com.rivaldofez.hexcap.util.showLoading
 import com.rivaldofez.hexcap.viewmodel.ViewModelFactoryTrivia
 import java.util.*
 
@@ -40,6 +41,10 @@ class TriviaActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 viewModel.getDetailTrivia().observe(this, {trivia->
                     setContentView(trivia)
                 })
+
+                viewModel.getLoadingStatus().observe(this,{status->
+                    showLoading(status, triviaBinding.loading)
+                })
             }
         }
 
@@ -51,7 +56,7 @@ class TriviaActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if(status == TextToSpeech.SUCCESS){
-            val res: Int = textToSpeech.setLanguage(Locale.US)
+            val res: Int = textToSpeech.setLanguage(Locale("id", "ID"))
 
             if(res == TextToSpeech.LANG_MISSING_DATA || res == TextToSpeech.LANG_NOT_SUPPORTED){
                 Log.e("Speech", "language not supported")

@@ -33,7 +33,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_star"
-            android:textSize="12sp"
+            android:textSize="9sp"
             android:textAlignment="center"
             android:fontFamily="@font/k2d_regular"
             android:textColor="@color/white"
@@ -44,7 +44,7 @@
             android:background="@drawable/bg_rating"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UseCompatTextViewDrawableXml"
+            tools:ignore="SmallSp,UseCompatTextViewDrawableXml"
             tools:text="4.5"/>
 
         <TextView
@@ -88,7 +88,8 @@
                 android:layout_marginStart="2dp"
                 android:textColor="@color/silver"
                 android:textSize="9sp"
-                tools:text="Magelang"/>
+                tools:text="Magelang"
+                tools:ignore="SmallSp" />
 
         </LinearLayout>
 
