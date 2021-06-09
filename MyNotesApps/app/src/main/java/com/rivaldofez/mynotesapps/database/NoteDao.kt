@@ -3,6 +3,7 @@ package com.rivaldofez.mynotesapps.database
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteQuery
 
 @Dao
 interface NoteDao {
@@ -15,8 +16,8 @@ interface NoteDao {
     @Delete
     fun delete(note: Note)
 
-    @Query("SELECT * from note ORDER BY id ASC")
-    fun getAllNotes(): DataSource.Factory<Int, Note>
+    @RawQuery(observedEntities = [Note::class])
+    fun getAllNotes(query: SupportSQLiteQuery): DataSource.Factory<Int, Note>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertAll(list: List<Note>)
