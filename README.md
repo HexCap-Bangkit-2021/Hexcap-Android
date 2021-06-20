@@ -31,7 +31,7 @@ To run Candhi, clone and insert your custom model (or use default model which ad
 
 Rebrand Product and Enhance Tourist Travel Experience with Gamification
 
-[Latest Design](https://xd.adobe.com/view/d093786a-5eb0-438a-8d43-b0b153a5a356-85c0/)
+[Latest Design](https://xd.adobe.com/view/d093786a-5eb0-438a-8d43-b0b153a5a356-85c0/?fullscreen)
 
 ## Contributing 👼🏿
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
