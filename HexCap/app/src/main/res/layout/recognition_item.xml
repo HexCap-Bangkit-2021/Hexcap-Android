@@ -5,7 +5,7 @@
     <data>
         <variable
             name="recognitionItem"
-            type="com.rivaldofez.hexcap.ml.Recognition" />
+            type="com.artesia.mobile.ml.Recognition" />
     </data>
 
     <LinearLayout
