@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="light_mint">#48CFAD</color>
+    <color name="mint">#37BC98</color>
+    <color name="bluejeans">#4A89DC</color>
+    <color name="light_bluejeans">#6799D1</color>
+    <color name="soft_mint_back">#F6FAFF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

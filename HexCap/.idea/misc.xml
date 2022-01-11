@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/bg_application.xml" value="0.3828125" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/bg_button_signin_google.xml" value="0.2203125" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/bg_card_login_slider.xml" value="0.2037037037037037" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/bg_rating.xml" value="0.15555555555555556" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/bg_searchview.xml" value="0.15555555555555556" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/drawable/ic_google.xml" value="0.2203125" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_detail_temple.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_home.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_maps.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_splash.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/activity_trivia.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/fragment_article.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/item_article.xml" value="0.1766304347826087" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Hexcap-Android/HexCap/app/src/main/res/layout/item_slider_login.xml" value="0.1766304347826087" />
       </map>
     </option>
   </component>

@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
         splashBinding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(splashBinding.root)
 
-        Glide.with(this).load(R.drawable.logo_candhi).into(splashBinding.imgLogoSplash)
+        Glide.with(this).load(R.drawable.logoijo).into(splashBinding.imgLogoSplash)
 
         val sprite = DoubleBounce()
         splashBinding.loading.visibility = View.VISIBLE

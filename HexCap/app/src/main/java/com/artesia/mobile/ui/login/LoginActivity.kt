@@ -11,9 +11,12 @@ import android.util.Log
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.common.api.ApiException
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginBinding
+    private val sliderAdapter = SliderAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +32,17 @@ class LoginActivity : AppCompatActivity() {
             val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
             startActivityForResult(mGoogleSignInClient.signInIntent, 100)
         }
+
+        val images = listOf<String>(
+            "https://i2.wp.com/borobudurnews.com/wp-content/uploads/2020/06/tribun.jpg",
+            "https://asset.kompas.com/crops/Yz_5aWR_v6WhZMGq8cICG9NJMSA=/1x0:1024x682/750x500/data/photo/2020/05/11/5eb950a1c8fb3.jpeg",
+            "https://www.indonesia.travel/content/dam/indtravelrevamp/en/news-events/news/8-beautiful-hotels-closest-to-magnificent-borobudur/76ba29efeda8d67f76756a568998d5e7a0977840-fb2e6.jpg"
+        )
+        sliderAdapter.setImages(images)
+        loginBinding.imgSliderLogin.setSliderAdapter(sliderAdapter)
+        loginBinding.imgSliderLogin.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        loginBinding.imgSliderLogin.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+        loginBinding.imgSliderLogin.startAutoCycle()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -36,10 +50,12 @@ class LoginActivity : AppCompatActivity() {
         if(requestCode == 100){
             val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
+            Log.d("Testing", "handlesignresult call")
         }
     }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        Log.d("Testing", "handle called")
         try {
             val account = completedTask.getResult(ApiException::class.java)
             Log.d("Testing", "test")
